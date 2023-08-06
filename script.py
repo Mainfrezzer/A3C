@@ -88,17 +88,16 @@ def waitForServerActive(name, client):
 
 # if a mod was updated
 def restartTheContainers():
-    sendToAllServersAndWait("broadcast Mods updated, restarting server in 15 minutes.", 300)
-    sendToAllServersAndWait("broadcast Mods updated, restarting server in 10 minutes.", 300)
-    sendToAllServersAndWait("broadcast Mods updated, restarting server in 5 minutes.", 60)
-    sendToAllServersAndWait("broadcast Mods updated, restarting server in 4 minutes.", 60)
-    sendToAllServersAndWait("broadcast Mods updated, restarting server in 3 minutes.", 60)
-    sendToAllServersAndWait("broadcast Mods updated, restarting server in 2 minutes.", 60)
-    sendToAllServersAndWait("broadcast Mods updated, restarting server in 1 minute.", 30)
-    sendToAllServersAndWait("broadcast Mods updated, restarting server in 30 seconds.", 15)
-    sendToAllServersAndWait("broadcast Mods updated, restarting server in 15 seconds.", 10)
-    sendToAllServersAndWait("broadcast Mods updated, restarting server in 5 seconds.", 5)
-    sendToAllServersAndWait("broadcast Saving Server", 0)
+    sendToAllServersAndWait("broadcast The server will be updated, restarting server in 15 minutes.", 300)
+    sendToAllServersAndWait("broadcast The server will be updated, restarting server in 10 minutes.", 300)
+    sendToAllServersAndWait("broadcast The server will be updated, restarting server in 5 minutes.", 60)
+    sendToAllServersAndWait("broadcast The server will be updated, restarting server in 4 minutes.", 60)
+    sendToAllServersAndWait("broadcast The server will be updated, restarting server in 3 minutes.", 60)
+    sendToAllServersAndWait("broadcast The server will be updated, restarting server in 2 minutes.", 60)
+    sendToAllServersAndWait("broadcast The server will be updated, restarting server in 1 minute.", 30)
+    sendToAllServersAndWait("broadcast The server will be updated, restarting server in 30 seconds.", 15)
+    sendToAllServersAndWait("broadcast The server will be updated, restarting server in 15 seconds.", 10)
+    sendToAllServersAndWait("broadcast Saving Server.", 5)
     sendToAllServersAndWait("saveworld", 15)
 
     first, rest = containersToRestart[0], containersToRestart[1:]
