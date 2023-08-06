@@ -1,1 +1,1 @@
-15 8 * * * /opt/scripts/BackupARK.sh
+35 3 * * * /opt/scripts/BackupARK.sh
