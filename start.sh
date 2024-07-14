@@ -49,6 +49,6 @@ if [[ $BACKUP_DAYS -eq 0 ]]
 		cron
 fi
 
-python -m http.server -d /serverdata/serverfiles/dynamicconfig 80 &
+ tmux new -d -s "httpserver" python -m http.server -d /serverdata/serverfiles/dynamicconfig 80 &
 
 python -u /opt/scripts/script.py

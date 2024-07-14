@@ -5,7 +5,8 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     python-is-python3 \
     python3-pip \
     cron \
-    nano
+    nano \
+    tmux
 RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get -y install tzdata
 WORKDIR /
 
