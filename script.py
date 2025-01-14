@@ -165,6 +165,7 @@ while True:
         mod_files = [ f.name for f in os.scandir(r"/serverdata/serverfiles/ShooterGame/Content/Mods") if not f.is_dir() ]
         mods_updated = 0
         force_update = os.getenv('FORCE_UPDATE')
+        daily_reboot = os.getenv('DAILY_REBOOT')
         if force_update == 'true':
             mods_updated += 1
             print('Update forced')
@@ -172,6 +173,13 @@ while True:
         if server_ver_check():
             mods_updated += 1
             print('Server revision change, queueing update')
+        
+        if daily_reboot == 'true':
+            now = datetime.now()
+            hour = now.strftime("%H")
+            min = now.strftime("%M")
+            if ((hour== '23') and (min<= '25')):
+                mods_updated += 1
 
         modIds = [x.replace('/serverdata/serverfiles/ShooterGame/Content/Mods/', '').replace('.mod', '') for x in mod_files]
         modIds.remove('111111111') # the default mod does not need to be queried and the result is missing info anyway
