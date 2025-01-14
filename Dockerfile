@@ -27,5 +27,6 @@ ADD dynamicconfig.ini /opt/scripts/dynamicconfig.ini
 ADD mcrcon /usr/local/bin/mcrcon
 RUN chmod +x /opt/scripts/script.py /opt/scripts/start.sh /opt/scripts/BackupARK.sh /usr/local/bin/mcrcon
 
+ENV DAILY_TIME="00:25"
 # Run the command on container startup
 CMD ["/opt/scripts/start.sh"]

@@ -88,15 +88,15 @@ def waitForServerActive(name, client):
 
 # if a mod was updated
 def restartTheContainers():
-    sendToAllServersAndWait("broadcast The server will be updated, restarting server in 15 minutes.", 300)
-    sendToAllServersAndWait("broadcast The server will be updated, restarting server in 10 minutes.", 300)
-    sendToAllServersAndWait("broadcast The server will be updated, restarting server in 5 minutes.", 60)
-    sendToAllServersAndWait("broadcast The server will be updated, restarting server in 4 minutes.", 60)
-    sendToAllServersAndWait("broadcast The server will be updated, restarting server in 3 minutes.", 60)
-    sendToAllServersAndWait("broadcast The server will be updated, restarting server in 2 minutes.", 60)
-    sendToAllServersAndWait("broadcast The server will be updated, restarting server in 1 minute.", 30)
-    sendToAllServersAndWait("broadcast The server will be updated, restarting server in 30 seconds.", 15)
-    sendToAllServersAndWait("broadcast The server will be updated, restarting server in 15 seconds.", 10)
+    sendToAllServersAndWait("broadcast The server will be restarted, restarting server in 15 minutes.", 300)
+    sendToAllServersAndWait("broadcast The server will be restarted, restarting server in 10 minutes.", 300)
+    sendToAllServersAndWait("broadcast The server will be restarted, restarting server in 5 minutes.", 60)
+    sendToAllServersAndWait("broadcast The server will be restarted, restarting server in 4 minutes.", 60)
+    sendToAllServersAndWait("broadcast The server will be restarted, restarting server in 3 minutes.", 60)
+    sendToAllServersAndWait("broadcast The server will be restarted, restarting server in 2 minutes.", 60)
+    sendToAllServersAndWait("broadcast The server will be restarted, restarting server in 1 minute.", 30)
+    sendToAllServersAndWait("broadcast The server will be restarted, restarting server in 30 seconds.", 15)
+    sendToAllServersAndWait("broadcast The server will be restarted, restarting server in 15 seconds.", 10)
     sendToAllServersAndWait("broadcast Saving Server.", 5)
     sendToAllServersAndWait("saveworld", 15)
 
@@ -178,7 +178,11 @@ while True:
             now = datetime.now()
             hour = now.strftime("%H")
             min = now.strftime("%M")
-            if ((hour== '23') and (min<= '25')):
+            daily_time = os.getenv('DAILY_TIME')
+            set_hour, set_min = daily_time.split(':')
+            if ((hour== set_hour) and (min<= set_min)):
+                print('Daily reboot time')
+                sendToAllServersAndWait("broadcast The server will perform the daily restart. Restarting server in 15 minutes.", 10)
                 mods_updated += 1
 
         modIds = [x.replace('/serverdata/serverfiles/ShooterGame/Content/Mods/', '').replace('.mod', '') for x in mod_files]
