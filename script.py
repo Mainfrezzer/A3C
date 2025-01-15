@@ -176,7 +176,7 @@ while True:
         
         if daily_reboot == 'true':
             now = datetime.now()
-            hour = now.strftime("%-H")
+            hour = now.strftime("%H")
             min = now.strftime("%M")
             daily_time = os.getenv('DAILY_TIME')
             set_hour, set_min = daily_time.split(':')
