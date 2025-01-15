@@ -176,11 +176,19 @@ while True:
         
         if daily_reboot == 'true':
             now = datetime.now()
-            hour = now.strftime("%H")
+            hour = now.strftime("%-H")
             min = now.strftime("%M")
             daily_time = os.getenv('DAILY_TIME')
             set_hour, set_min = daily_time.split(':')
-            if ((hour== set_hour) and (min<= set_min)):
+            if (min<= "20" and set_min<= "20"):
+                set_min = "1"
+            elif ((min>= "21" and set_min>= "21") and (min<= "39" and set_min<= "39")):
+                set_min = "1"
+            elif (min>= "40" and set_min>= "40"):
+                set_min = "1"
+            else:
+                set_min = "0"
+            if ((hour== set_hour) and (set_min== "1")):
                 print('Daily reboot time')
                 sendToAllServersAndWait("broadcast The server will perform the daily restart. Restarting server in 15 minutes.", 10)
                 mods_updated += 1
