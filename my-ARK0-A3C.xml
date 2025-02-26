@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>ARK0-A3C</Name>
-  <Repository>cydfsa/companion:arkse</Repository>
+  <Repository>mainfrezzer/a3c:latest</Repository>
   <Registry/>
   <Network>bridge</Network>
   <MyIP/>
