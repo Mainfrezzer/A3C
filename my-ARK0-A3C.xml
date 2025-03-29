@@ -31,4 +31,7 @@
   <Config Name="DCFB" Target="/serverdata/backup" Default="" Mode="rw" Description="Where to put the backups" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/backup</Config>
   <Config Name="Backup Days" Target="BACKUP_DAYS" Default="" Mode="" Description="Number of days to keep backups" Type="Variable" Display="always" Required="false" Mask="false">10</Config>
   <Config Name="Dynamicconfig" Target="/dynamicconfig" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/cache/appdata/ark-se/dynamicconfig</Config>
+  <Config Name="Force Restart" Target="FORCE_UPDATE" Default="false|true" Mode="" Description="added by mainfrezzer" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
+  <Config Name="DAILY_REBOOT" Target="DAILY_REBOOT" Default="false|true" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="DAILY_REBOOT_TIME" Target="DAILY_TIME" Default="23:25" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">07:25</Config>
 </Container>
