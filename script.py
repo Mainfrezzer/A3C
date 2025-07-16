@@ -7,7 +7,7 @@ import docker
 import json
 import requests
 import re
-from distutils.version import StrictVersion
+from distutils.version import LooseVersion
 from datetime import datetime
 
 print("Ark Mod Update Detection Started")
@@ -149,12 +149,16 @@ def get_mod_info(mod_ids):
 
 
 def server_ver_check():
-    with open('/serverdata/serverfiles/version.txt') as lfile:
-        lversion = lfile.read().strip()
+    version_file_path = '/serverdata/serverfiles/version.txt'
+    try:
+        with open(version_file_path) as lfile:
+            lversion = lfile.read().strip()
+    except FileNotFoundError:
+        lversion = "360.1+"
     with requests.get('http://arkdedicated.com/version') as rfile:
         rversion = rfile.text.strip()
-    print("local version:",lversion,"arkdedicated version:",rversion)
-    return StrictVersion(rversion) > StrictVersion(lversion)
+    print("local version:", lversion, "arkdedicated version:", rversion)
+    return LooseVersion(rversion) > LooseVersion(lversion)
 
 
 
@@ -194,7 +198,7 @@ while True:
                 mods_updated += 1
 
         modIds = [x.replace('/serverdata/serverfiles/ShooterGame/Content/Mods/', '').replace('.mod', '') for x in mod_files]
-        modIds.remove('111111111') # the default mod does not need to be queried and the result is missing info anyway
+        # doesnt exist anymore post 360.1 modIds.remove('111111111') # the default mod does not need to be queried and the result is missing info anyway
 
         print(f'Mod Ids to check: {modIds}')
 
