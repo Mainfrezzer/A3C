@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Container version="2">
-  <Name>ARK3-Aberration_P</Name>
+  <Name>ARK13-Aquatica</Name>
   <Repository>ghcr.io/mainfrezzer/ase-docker</Repository>
   <Registry>https://github.com/Mainfrezzer/ase-docker/pkgs/container/ase-docker</Registry>
   <Network>bridge</Network>
@@ -27,7 +27,7 @@ You can also run multiple servers with only one SteamCMD directory!</Overview>
   <ExtraParams>--ulimit nofile=2048:65530 --restart=unless-stopped</ExtraParams>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1688848702</DateInstalled>
+  <DateInstalled>1689247996</DateInstalled>
   <DonateText>If you like Ich777 work please </DonateText>
   <DonateLink>https://www.paypal.me/chips777</DonateLink>
   <Requires/>
@@ -37,17 +37,18 @@ You can also run multiple servers with only one SteamCMD directory!</Overview>
   <Config Name="Steam-Username" Target="USERNAME" Default="" Mode="" Description="Your Steam username goes here if you want to install a game that needs a valid account, otherwise leave it blank (ATTENTION: You have to disable Steam Guard)." Type="Variable" Display="always-hide" Required="false" Mask="false"/>
   <Config Name="Validate Installation" Target="VALIDATE" Default="" Mode="" Description="Set the Variable to 'true' if you want to validate the installation otherwise leave it blank." Type="Variable" Display="always-hide" Required="false" Mask="false"/>
   <Config Name="Steam-Password" Target="PASSWRD" Default="" Mode="" Description="Your Steam password goes here if you want to install a game that needs a valid account, otherwise leave it blank (ATTENTION: You have to disable Steam Guard)." Type="Variable" Display="always-hide" Required="false" Mask="true"/>
-  <Config Name="Map" Target="MAP" Default="TheIsland" Mode="" Description="" Type="Variable" Display="always-hide" Required="true" Mask="false">Aberration_P</Config>
-  <Config Name="Server Name" Target="SERVER_NAME" Default="" Mode="" Description="Leave empty if you want to use the settings from GameUserSettings.ini (this field accepts no spaces)" Type="Variable" Display="always-hide" Required="false" Mask="false">Your-Aberration</Config>
+  <Config Name="Map" Target="MAP" Default="TheIsland" Mode="" Description="" Type="Variable" Display="always-hide" Required="true" Mask="false">Aquatica</Config>
+  <Config Name="Server Name" Target="SERVER_NAME" Default="" Mode="" Description="Leave empty if you want to use the settings from GameUserSettings.ini (this field accepts no spaces)" Type="Variable" Display="always-hide" Required="false" Mask="false">Your-Aquatica</Config>
   <Config Name="Server Password" Target="SRV_PWD" Default="" Mode="" Description="Leave empty if you want to use the settings from GameUserSettings.ini (this field accepts no spaces)" Type="Variable" Display="always-hide" Required="false" Mask="false"/>
   <Config Name="Server Admin Password" Target="SRV_ADMIN_PWD" Default="" Mode="" Description="Leave empty if you want to use the settings from GameUserSettings.ini (this field accepts no spaces)" Type="Variable" Display="always-hide" Required="false" Mask="false">NotMyPassword</Config>
-  <Config Name="Game Parameters" Target="GAME_PARAMS" Default="" Mode="" Description="Enter your game parameters seperated with ? and start with a ? (don't put spaces in between eg: ?MaxPlayers=40?FastDecayUnsnappedCoreStructures=true)" Type="Variable" Display="always-hide" Required="false" Mask="false">?Port=7781?QueryPort=27017?MaxPlayers=10?RCONEnabled=True?RCONPort=27037</Config>
+  <Config Name="Game Parameters" Target="GAME_PARAMS" Default="" Mode="" Description="Enter your game parameters seperated with ? and start with a ? (don't put spaces in between eg: ?MaxPlayers=40?FastDecayUnsnappedCoreStructures=true)" Type="Variable" Display="always-hide" Required="false" Mask="false">?Port=7801?QueryPort=27027?MaxPlayers=50?RCONEnabled=True?RCONPort=27047</Config>
   <Config Name="Extra Game Parameters" Target="GAME_PARAMS_EXTRA" Default="" Mode="" Description="Type in your Extra Game Parameters seperated with a space and - (eg: -DisableDeathSpectator -UseBattlEye)" Type="Variable" Display="always-hide" Required="true" Mask="false">-clusterid=YourCluster -ClusterDirOverride=/serverdata/serverfiles/clusterfiles -UseDynamicConfig -UseItemDupeCheck -NoTransferFromFiltering -PublicIPForEpic=0.0.0.0 -crossplay -UseVivox -CustomNotificationURL=http://172.17.0.1:8888/pcnotification.html -servergamelog -servergamelogincludetribelogs</Config>
-  <Config Name="UDP 1" Target="7781" Default="" Mode="udp" Description="" Type="Port" Display="always" Required="false" Mask="false">7781</Config>
-  <Config Name="UDP 2" Target="7782" Default="" Mode="udp" Description="" Type="Port" Display="always" Required="false" Mask="false">7782</Config>
-  <Config Name="UDPSteam" Target="27017" Default="" Mode="udp" Description="" Type="Port" Display="always" Required="false" Mask="false">27017</Config>
-  <Config Name="TCPRCON" Target="27037" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">27037</Config>
-  <Config Name="Saved" Target="/serverdata/serverfiles/ShooterGame/Saved" Default="" Mode="rw" Description="segregated space for saving arks and map specific config inis" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/ark-se/ARK3-Aberration_P</Config>
+  <Config Name="UDP 1" Target="7801" Default="" Mode="udp" Description="" Type="Port" Display="always" Required="false" Mask="false">7801</Config>
+  <Config Name="UDP 2" Target="7802" Default="" Mode="udp" Description="" Type="Port" Display="always" Required="false" Mask="false">7802</Config>
+  <Config Name="UDPSteam" Target="27027" Default="" Mode="udp" Description="" Type="Port" Display="always" Required="false" Mask="false">27027</Config>
+  <Config Name="TCPRCON" Target="27047" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">27047</Config>
+  <Config Name="Saved" Target="/serverdata/serverfiles/ShooterGame/Saved" Default="" Mode="rw" Description="segregated space for saving arks and map specific config inis" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/ark-se/ARK13-Aquatica</Config>
   <Config Name="UID" Target="UID" Default="" Mode="" Description="" Type="Variable" Display="advanced-hide" Required="true" Mask="false">99</Config>
   <Config Name="GID" Target="GID" Default="" Mode="" Description="" Type="Variable" Display="advanced-hide" Required="true" Mask="false">100</Config>
+  <TailscaleStateDir/>
 </Container>
